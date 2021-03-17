@@ -15,6 +15,12 @@
       "MBM\\": "src/"
     }
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/mbm-rafal/laravel-single-dispatch"
+    }
+  ],
   "scripts": {
     "test": "vendor/bin/kahlan"
   }
