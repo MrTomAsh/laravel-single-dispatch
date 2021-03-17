@@ -4,6 +4,7 @@ namespace MBM\Bus;
 
 use Illuminate\Queue\Jobs\Job;
 use MBM\Bus\Model\JobsRegister;
+use Illuminate\Support\Arr;
 
 /**
  * Class Dispatcher
@@ -32,7 +33,7 @@ class Dispatcher extends \Illuminate\Bus\Dispatcher
 
     public function unregister(Job $job)
     {
-        return JobsRegister::unregisterJob($this->getChecksum(array_get($job->payload(), 'data')));
+        return JobsRegister::unregisterJob($this->getChecksum(Arr::get($job->payload(), 'data')));
     }
 
     /**
